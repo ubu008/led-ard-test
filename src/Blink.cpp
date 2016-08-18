@@ -11,27 +11,21 @@
 CRGB leds[NUM_LEDS];
 
 float breatV[] = {
-  17, 12, 11, 9.75, 8, 7.5, 6.75, 6, 5.5, 5, 4.5,
-  4, 3.75, 3.75, 4, 4.25, 4.25, 4, 4, 3.75, 3.75,
-  3.5, 3.25, 3.25, 3.5, 3.75, 5, 6, 8.5, 11, 13,
-  15, 18, 20, 22.5, 24.5, 26.75, 28.5, 30.5, 32.25,
-  33, 33.25, 33, 32, 28.75, 23, 20.5
+        17, 12, 11, 9.75, 8, 7.5, 6.75, 6, 5.5, 5, 4.5,
+        4, 3.75, 3.75, 4, 4.25, 4.25, 4, 4, 3.75, 3.75,
+        3.5, 3.25, 3.25, 3.5, 3.75, 5, 6, 8.5, 11, 13,
+        15, 18, 20, 22.5, 24.5, 26.75, 28.5, 30.5, 32.25,
+        33, 33.25, 33, 32, 28.75, 23, 20.5
 };
 void breat(/* arguments */) {
-  /* code */
-  int i;
-  int k;
-  for (i=0; i<46;i++) {
-  //  leds[0] = CRGB( 0, 161, 255);
-  //  leds[0] -= (int)((breatV[i] * 6)+55);
-//  FastLED.showColor(CHSV(255, 255, 255));
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CHSV(85 ,255, (int)((breatV[i] * 4)+50));
-//  leds[1] = CHSV(85 ,255, (int)((breatV[i] * 6)+50));
-//  leds[2] = CHSV(85 ,255, (int)((breatV[i] * 6)+50));
-  FastLED.show();
-  delay(100);
-};
-
+        /* code */
+        int i;
+        int k;
+        for (i=0; i<46; i++) {
+                for (k=0; k<NUM_LEDS; k++) leds[k] = CHSV(85,255, (int)((breatV[i] * 4)+50));
+                FastLED.show();
+                delay(100);
+        };
 }
 
 
@@ -40,42 +34,40 @@ void breat(/* arguments */) {
 
 void setup() {
 
-       FastLED.addLeds<WS2812, DATA_PIN, RGB>(leds, NUM_LEDS);
-     }
+        FastLED.addLeds<WS2812, DATA_PIN, RGB>(leds, NUM_LEDS);
+}
 
 void loop() {
-  // Turn the LED on, then pause
-  int k;
-  for (k=0;k<NUM_LEDS;k++)  leds[k] = CRGB::Red;
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++)  leds[k] = CRGB::Green;
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB::Blue;
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB(241,117, 183);
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB(103,0, 0);
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB(255, 78, 48); //portland orang
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB(250, 196, 165);//wax flower
-  FastLED.show();
-  delay(500);
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB(0,106, 255);
-  FastLED.show();
-  delay(500);
-  // Now turn the LED off, then pause
-  for (k=0;k<NUM_LEDS;k++) leds[k] = CRGB::Black;
-  FastLED.show();
-  delay(500);
-
-for (int j=0;j<NUM_BREAT;j++) breat();
+        // Turn the LED on, then pause
+        int k;
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB::Red;
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB::Green;
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB::Blue;
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB(241,117, 183);
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB(103,0, 0);
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB(255, 78, 48); //portland orang
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB(250, 196, 165); //wax flower
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB(0,106, 255);
+        FastLED.show();
+        delay(500);
+        for (k=0; k<NUM_LEDS; k++) leds[k] = CRGB::Black;
+        FastLED.show();
+        delay(500);
+        for (int j=0; j<NUM_BREAT; j++) breat();
 
 
 }
